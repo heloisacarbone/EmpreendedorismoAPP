@@ -8,21 +8,35 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent implements OnInit {
-  lat: number = 51.678418;
-  lng: number = 7.809007;
-  
+  lat: number = -23.4821149;
+  lng: number = -46.4995538;
+ 
+  constructor(
+    public router: Router
+  ) {}
+
   ngOnInit(): void {
-    console.log('aq');
-    if (window.navigator && window.navigator.geolocation) {
-      window.navigator.geolocation.getCurrentPosition(
-          position => {
-            console.log(position)
-            this.lat = position.coords.latitude;
-            this.lng = position.coords.longitude;
-          }
-      );
+    this.setCurrentPosition();
+
+    // if (window.navigator && window.navigator.geolocation) {
+    //   window.navigator.geolocation.getCurrentPosition(
+    //       position => {
+    //         console.log(position)
+    //         this.lat = position.coords.latitude;
+    //         this.lng = position.coords.longitude;
+    //       }
+    //   );
+    // }
+  }
+
+  private setCurrentPosition() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+      });
     }
   }
-  constructor(public router: Router) {}
+  
 
 }

@@ -1,0 +1,15 @@
+
+Usage: typings <command>
+
+Commands:
+    bundle, i, in, info, init, install, la, list, ll, ls, open, prune, r,
+    remove, rm, search, un, uninstall, view
+
+typings <command> -h    Get help for <command>
+typings <command> -V    Enable verbose logging
+
+typings --version       Print the CLI version
+  [--loglevel] <level>  Set the log level ("debug", info", "warn", "error" or "silent")
+
+typings@2.1.1 /usr/local/lib/node_modules/typings
+
