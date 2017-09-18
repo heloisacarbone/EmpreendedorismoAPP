@@ -17,10 +17,6 @@ export const routes: Routes = [
     { 
         path: 'obstaculos', 
         component: ModalObstacleComponent
-    },
-    { 
-        path: '',       
-        component: AppComponent
     }
   
     
