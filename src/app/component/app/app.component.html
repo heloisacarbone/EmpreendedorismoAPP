@@ -1,32 +1,14 @@
 
-<div class="nav-container">
-  <p class="titulo">Veja Por Mim</p>
-  <div class="nav-div-btns">
-      <button (click)="navButton(1)" class="nav-btn" type="button">Mapa</button>
-      <button (click)="navButton(2)" class="nav-btn" type="button">Destinos Favoritos</button>
-      <button (click)="navButton(3)" class="nav-btn" type="button">Ônibus</button>
+<div class="row nav-container">
+  <p class="col-sm-4 titulo">Veja Por Mim</p>
+  <div class="col-sm-8 nav-div-btns">
+      <div class="row">
+          <a class="col-sm-4 btn" routerLink="/mapa" routerLinkActive="active">Mapa</a>
+          <a class="col-sm-4 btn" routerLink="/favoritos" routerLinkActive="active">Destinos Favoritos</a>
+      </div>
   </div>
-
 </div>
 
-<div *ngIf="tab===1" class = "map-container">
-  <agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map>
+<div class="main">
+  <router-outlet></router-outlet>
 </div>
-
-
-<div *ngIf="tab===2" class="destinos-container">
-  <h1>Destinos Favoritos</h1>
-  <h2>Casa</h2>
-  <h3>Rua dos bobos, 0 - São Paulo, SP</h3>
-  <h2>Trabalho</h2>
-  <h3> Av. Brg. Faria Lima, 3477 - Itaim Bibi, São Paulo - SP</h3>
-  <h2>Faculade</h2>
-  <h3>Rua Arlindo Béttio, 1000 - Jardim Keralux, São Paulo - SP</h3>
-</div>
-
-<div *ngIf="tab===3" class="onibus-container">
-  <input class="input-onibus" type="text" placeholder="   Digite número ou nome do ônibus desejado">
-</div>
-x

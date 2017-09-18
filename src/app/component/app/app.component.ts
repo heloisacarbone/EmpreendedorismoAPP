@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(
     public router: Router
   ) {}
-
+  
   ngOnInit(): void {
     this.setCurrentPosition();
 
@@ -37,12 +38,9 @@ export class AppComponent implements OnInit {
       });
     }
   }
-  
-
   public tab = 3;
   public navButton(tab) {
     this.tab = tab;
 
   }
 }
-

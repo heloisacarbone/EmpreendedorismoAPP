@@ -2,11 +2,37 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'maps',
-  templateUrl: './maps.component.html'
+  selector: 'mapa',
+  templateUrl: './maps.component.html',
+  styleUrls: ['./maps.component.css']
 })
 
 export class MapsComponent {
-  constructor(public router: Router) {}
+  lat: number = -23.4821149;
+  lng: number = -46.4995538;
+  zoom: number = 16;
+  showDialog = false;
+ 
+  constructor(
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.setCurrentPosition();
+
+  }
+
+  private setCurrentPosition() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+      });
+    }
+  }
+
+  private openModalObstacle() {
+    this.router.navigate(['obstaculos']);
+  }
 
 }
