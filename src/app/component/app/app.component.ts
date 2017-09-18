@@ -39,4 +39,10 @@ export class AppComponent implements OnInit {
   }
   
 
+  public tab = 3;
+  public navButton(tab) {
+    this.tab = tab;
+
+  }
 }
+
