@@ -12,4 +12,10 @@ export class AppComponent {
   lng: number = 7.809007;
   constructor(public router: Router) {}
 
+  public tab = 3;
+  public navButton(tab) {
+    this.tab = tab;
+
+  }
 }
+

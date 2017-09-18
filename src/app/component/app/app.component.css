@@ -1,3 +1,68 @@
 agm-map {
-    height: 100vh;
+    height: 500px;
+}
+
+.nav-div-btns{
+
+    float: right;
+    padding-right: 37px;
+
+}
+
+.nav-btn{
+    border: none;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 10px;
+    margin-top: 7px;
+}
+
+.nav-container{
+    background-color: darkblue;
+    height: 60px;
+    padding-top: 8px;
+}
+.destinos-container{
+    padding-left:25px;
+    padding-right:25px;
+    width:75%;
+    margin:auto;
+    border:none;
+    margin-top: 25px;
+    /* border-top:2px solid #000000; */
+}
+
+
+.onibus-container{
+    padding-left:25px;
+    padding-right:25px;
+    width:75%;
+    margin:auto;
+    border:none;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.map-container{
+    padding:25px;
+    height: 100px;
+    width: 75%;
+    margin: auto;
+
+}
+
+.input-onibus{
+    margin: 10px;
+    width: 50%;
+    border: 2px solid #0000;
+    border-radius: 15px;
+}
+
+.titulo{
+    float: left;
+    color: white;
+    font-size: 15pt;
+    padding-left: 40px;
+    padding-top: 8px;
 }
