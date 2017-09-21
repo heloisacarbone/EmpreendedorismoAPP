@@ -4,5 +4,9 @@
 </button>
 
 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <agm-marker [latitude]="lat" [longitude]="lng">
+        <agm-info-window>
+            <strong>InfoWindow content</strong>
+          </agm-info-window>
+    </agm-marker>
 </agm-map>

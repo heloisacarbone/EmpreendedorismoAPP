@@ -7,7 +7,9 @@ import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from '../component/app/app.component';
 import { MapsComponent } from '../component/maps/maps.component';
 import { FavoritePlaces } from '../component/favorite-places/favorite-places.component'; 
-import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component'
+import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component';
+import { MenuComponent } from '../component/menu/menu.component';
+
 
 import { routes } from './app.routes';
 
@@ -16,6 +18,7 @@ import { routes } from './app.routes';
     AppComponent,
     MapsComponent,
     FavoritePlaces,
+    MenuComponent,
     ModalObstacleComponent
   ],
   imports: [

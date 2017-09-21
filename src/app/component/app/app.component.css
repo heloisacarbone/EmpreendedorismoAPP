@@ -1,51 +1,22 @@
-.nav-btn{
+.nav-btn {
     border: none;
 }
 
 .nav-container{
     background-color: darkblue;
-}
-
-.destinos-container{
-    padding-left:25px;
-    padding-right:25px;
-    width:75%;
-    margin:auto;
-    border:none;
-    margin-top: 25px;
-    /* border-top:2px solid #000000; */
-}
-
-
-.onibus-container{
-    padding-left:25px;
-    padding-right:25px;
-    width:75%;
-    margin:auto;
-    border:none;
-    margin-top: 25px;
-    text-align: center;
-}
-
-.map-container{
-    padding:25px;
-    height: 100px;
-    width: 75%;
-    margin: auto;
-
-}
-
-.input-onibus{
-    margin: 10px;
-    width: 50%;
-    border: 2px solid #0000;
-    border-radius: 15px;
+    width: 105%;
 }
 
 .titulo{
     float: left;
     color: white;
-    font-size: 15pt;
-    padding-left: 40px;
-    padding-top: 8px;
+    font-size: 1.5em;
+    padding-left: 1.5em;
+    padding-top: 0.5em;
+}
+
+.btn-nav {
+    position: absolute;
+    right: 2em;
+    top: 0.5em;
 }
