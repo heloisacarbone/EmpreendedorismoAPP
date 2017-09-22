@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -9,6 +10,9 @@ import { MapsComponent } from '../component/maps/maps.component';
 import { FavoritePlaces } from '../component/favorite-places/favorite-places.component'; 
 import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component';
 import { MenuComponent } from '../component/menu/menu.component';
+
+
+import { ObstacleService } from '../services/obstacles/obstacle.service';
 
 
 import { routes } from './app.routes';
@@ -23,6 +27,7 @@ import { routes } from './app.routes';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(routes, {
       useHash: true
     }),
@@ -30,11 +35,11 @@ import { routes } from './app.routes';
       apiKey: 'AIzaSyAMLU3CZCl4fWZ2U3vRuXMvVRewzpC1LAA'
     })
   ],
-  providers: [],
+  providers: [
+    ObstacleService
+  ],
   bootstrap: [
-    AppComponent, 
-    MapsComponent,
-    ModalObstacleComponent
+    AppComponent
   ]
 })
 export class AppModule { }

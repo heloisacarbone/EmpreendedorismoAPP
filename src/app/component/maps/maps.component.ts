@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import * as Maps from 'google-maps';
 
+import { ObstacleService } from '../../services/obstacles/obstacle.service';
+
 @Component({
   selector: 'mapa',
   templateUrl: './maps.component.html',
@@ -15,11 +17,13 @@ export class MapsComponent {
   showDialog = false;
  
   constructor(
-    private router: Router
+    private router: Router,
+    private obstacleService: ObstacleService
   ) {}
 
   ngOnInit(): void {
     this.setCurrentPosition();
+    this.loadObstacles();
 
   }
 
@@ -36,4 +40,12 @@ export class MapsComponent {
     this.router.navigate(['obstaculos']);
   }
 
+  private loadObstacles() {
+    this.obstacleService.get(String(this.lat),String(this.lng))
+      .subscribe(
+        obstacles => {
+          console.log("Obstaculos", obstacles);
+        }
+      );
+  }
 }

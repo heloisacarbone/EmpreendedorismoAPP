@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'modal-obstacle',
@@ -16,4 +17,10 @@ export class ModalObstacleComponent implements OnInit {
     constructor(
         public router: Router
     ) {}
+
+    registerObstacle(form: NgForm) {
+        console.log(form.value);
+        // {email: '...', password: '...'}
+        // ... <-- now use JSON.stringify() to convert form values to json.
+      }
 }
