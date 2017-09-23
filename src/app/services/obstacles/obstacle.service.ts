@@ -3,15 +3,13 @@ import {Http, Response, URLSearchParams} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {Observable} from 'rxjs';
+import { ObstacleFactory } from '../../factories/obstacles/obstacles.factory';
 
 @Injectable()
 export class ObstacleService{
-    ngOnInit(): void {
-        throw new Error("Method not implemented.");
-    }
-
     constructor(
-        private http: Http
+        private http: Http,
+        private obstacleFactory: ObstacleFactory
     ) {}
 
     add(o: any): Observable<any> {
@@ -21,7 +19,7 @@ export class ObstacleService{
     } 
     get(lat: string, lng: string, type?: string): Observable<any> {
         return this.http.get('http://localhost:7010/obstacle/get?lat='+lat+"&lng="+lng)
-            .map(res => res.json())
+            .map(res => this.obstacleFactory.translateGet(res.json()))
             .catch(err => err);
     } 
 }
