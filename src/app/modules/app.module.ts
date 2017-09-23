@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
+import { CommonModule }   from '@angular/common';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -30,6 +31,7 @@ import { routes } from './app.routes';
     FormsModule,
     BrowserModule,
     HttpModule,
+    CommonModule,
     RouterModule.forRoot(routes, {
       useHash: true
     }),

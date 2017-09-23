@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import * as Maps from 'google-maps';
 
 import { ObstacleService } from '../../services/obstacles/obstacle.service';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'mapa',
@@ -14,6 +15,7 @@ export class MapsComponent {
   lat: number = -23.4821149;
   lng: number = -46.4995538;
   zoom: number = 16;
+  obstacles: any = [];
   showDialog = false;
  
   constructor(
@@ -50,6 +52,7 @@ export class MapsComponent {
     this.obstacleService.get(String(this.lat),String(this.lng))
       .subscribe(
         obstacles => {
+          this.obstacles = obstacles;
           console.log("Obstaculos", obstacles);
         }
       );
