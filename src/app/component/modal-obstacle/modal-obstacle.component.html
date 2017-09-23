@@ -5,18 +5,37 @@
     <div class="form-group">
         <label for="email">Que tipo de obstáculo?</label>
         <div class="radio">
-          <label><input type="radio" name="optradio" id="hole" ngModel>Buraco</label>
+          <label><input type="radio" name="obsradio" value="hole" ngModel>Buraco</label>
         </div>
         <div class="radio">
-          <label><input type="radio" name="optradio" id="post" ngModel>Poste</label>
+          <label><input type="radio" name="obsradio" value="pole" ngModel>Poste</label>
         </div>
         <div class="radio">
-          <label><input type="radio" name="optradio" id="others" ngModel>Outro</label>
+          <label><input type="radio" name="obsradio" value="others" ngModel>Outro</label>
         </div>
     </div>
 
 
-  <button class="btn btn-default" type="submit">Enviar Obstáculo</button>
+  <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal">Enviar Obstáculo</button>
 </form>
 
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>

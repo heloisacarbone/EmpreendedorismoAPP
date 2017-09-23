@@ -37,7 +37,13 @@ export class MapsComponent {
   }
 
   private openModalObstacle() {
-    this.router.navigate(['obstaculos']);
+
+    this.router.navigate(['obstaculos'], {
+      queryParams: {
+          "lat": this.lat,
+          "lng": this.lng
+      }
+    });
   }
 
   private loadObstacles() {
