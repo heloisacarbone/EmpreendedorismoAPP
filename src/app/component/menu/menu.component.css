@@ -1,0 +1,13 @@
+.row {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+.btn-block {
+    padding: 2.2em 0;
+    margin-left: -5vw;
+}
+
+.container{
+    margin: auto;
+}
