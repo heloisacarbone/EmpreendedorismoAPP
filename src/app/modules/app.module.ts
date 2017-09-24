@@ -9,7 +9,7 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from '../component/app/app.component';
 import { MapsComponent } from '../component/maps/maps.component';
-import { FavoritePlaces } from '../component/favorite-places/favorite-places.component'; 
+import { FavoritePlaces } from '../component/favorite-places/favorite-places.component';
 import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component';
 import { MenuComponent } from '../component/menu/menu.component';
 
@@ -19,6 +19,9 @@ import { ObstacleService } from '../services/obstacles/obstacle.service';
 import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
 
 import { routes } from './app.routes';
+import { DirectionService } from '../services/obstacles/direction.service';
+import { Directions } from '../component/directions/directions.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { routes } from './app.routes';
     MapsComponent,
     FavoritePlaces,
     MenuComponent,
-    ModalObstacleComponent
+    ModalObstacleComponent,
+    Directions
   ],
   imports: [
     FormsModule,

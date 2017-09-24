@@ -15,6 +15,9 @@ export class MenuComponent {
   private goToFavorite() {
     this.router.navigate(['favoritos']);
   }
+  private goToDirections(){
+    this.router.navigate(['directions']);
+  }
   private goToBus() {
     this.router.navigate(['onibus']);
   }
