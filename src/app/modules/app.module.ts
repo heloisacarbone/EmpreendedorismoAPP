@@ -16,6 +16,7 @@ import { MenuComponent } from '../component/menu/menu.component';
 
 import { ObstacleService } from '../services/obstacles/obstacle.service';
 
+import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
 
 import { routes } from './app.routes';
 
@@ -40,7 +41,8 @@ import { routes } from './app.routes';
     })
   ],
   providers: [
-    ObstacleService
+    ObstacleService,
+    ObstacleFactory
   ],
   bootstrap: [
     AppComponent
