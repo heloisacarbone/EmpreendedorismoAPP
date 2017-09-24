@@ -4,7 +4,7 @@ import { MapsComponent } from '../component/maps/maps.component';
 import { FavoritePlaces } from '../component/favorite-places/favorite-places.component';
 import { MenuComponent } from '../component/menu/menu.component';
 import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component';
-import { Directions } from '../component/directions/directions.component';
+import { DirectionsComponent } from '../component/directions/directions.component';
 
 
 // Define which component should be loaded based on the current URL
@@ -23,7 +23,7 @@ export const routes: Routes = [
     },
     {
         path: 'directions',
-        component: Directions
+        component: DirectionsComponent
     },
     {
         path: '',

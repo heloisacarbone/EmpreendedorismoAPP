@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { NgForm } from '@angular/forms';
 
-import { DirectionService } from '../../services/obstacles/direction.service';
+import { DirectionService } from '../../services/directions/direction.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { DirectionService } from '../../services/obstacles/direction.service';
   providers:[DirectionService]
 })
 
-export class Directions implements OnInit {
+export class DirectionsComponent implements OnInit {
     constructor(
         private router: Router,
         private DirectionService: DirectionService

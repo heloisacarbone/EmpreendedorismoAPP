@@ -4,23 +4,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { CommonModule }   from '@angular/common';
-
 import { AgmCoreModule } from '@agm/core';
 
+import { routes } from './app.routes';
+
+// Components
 import { AppComponent } from '../component/app/app.component';
 import { MapsComponent } from '../component/maps/maps.component';
 import { FavoritePlaces } from '../component/favorite-places/favorite-places.component';
 import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component';
 import { MenuComponent } from '../component/menu/menu.component';
+import { DirectionsComponent } from '../component/directions/directions.component';
 
-
+// Services
 import { ObstacleService } from '../services/obstacles/obstacle.service';
+import { DirectionService } from '../services/directions/direction.service';
 
+// Factories
 import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
-
-import { routes } from './app.routes';
-import { DirectionService } from '../services/obstacles/direction.service';
-import { Directions } from '../component/directions/directions.component';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { Directions } from '../component/directions/directions.component';
     FavoritePlaces,
     MenuComponent,
     ModalObstacleComponent,
-    Directions
+    DirectionsComponent
   ],
   imports: [
     FormsModule,
@@ -46,6 +47,7 @@ import { Directions } from '../component/directions/directions.component';
   ],
   providers: [
     ObstacleService,
+    DirectionService,
     ObstacleFactory
   ],
   bootstrap: [
