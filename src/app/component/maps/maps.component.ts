@@ -30,7 +30,7 @@ export class MapsComponent {
   }
 
   private setCurrentPosition() {
-    if ("geolocation" in navigator) {
+    if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
@@ -42,8 +42,8 @@ export class MapsComponent {
 
     this.router.navigate(['obstaculos'], {
       queryParams: {
-          "lat": this.lat,
-          "lng": this.lng
+          'lat': this.lat,
+          'lng': this.lng
       }
     });
   }
