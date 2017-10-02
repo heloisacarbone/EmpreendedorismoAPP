@@ -18,19 +18,19 @@ export class DirectionsComponent implements OnInit {
     lng: number = -46.4995538;
     zoom = 16;
     constructor(
-        private router: Router,
-        private DirectionService: DirectionService
+        public router: Router,
+        public DirectionService: DirectionService
       ) {}
     ngOnInit(): void {
         this.setCurrentPosition();
     }
 
-    private calculateRoute(or, des){
+    public calculateRoute(or, des){
         console.log('calculate route! ',or,"-" ,des );
         this.DirectionService.test();
     }
 
-    private setCurrentPosition() {
+    public setCurrentPosition() {
         if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition((position) => {
                 this.lat = position.coords.latitude;

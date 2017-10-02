@@ -19,8 +19,8 @@ export class MapsComponent {
   showDialog = false;
  
   constructor(
-    private router: Router,
-    private obstacleService: ObstacleService
+    public router: Router,
+    public obstacleService: ObstacleService
   ) {}
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class MapsComponent {
 
   }
 
-  private setCurrentPosition() {
+  public setCurrentPosition() {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.lat = position.coords.latitude;
@@ -38,7 +38,7 @@ export class MapsComponent {
     }
   }
 
-  private openModalObstacle() {
+  public openModalObstacle() {
 
     this.router.navigate(['obstaculos'], {
       queryParams: {
@@ -48,7 +48,7 @@ export class MapsComponent {
     });
   }
 
-  private loadObstacles() {
+  public loadObstacles() {
     this.obstacleService.get(String(this.lat),String(this.lng))
       .subscribe(
         obstacles => {

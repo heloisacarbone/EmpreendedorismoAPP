@@ -15,13 +15,13 @@ export class ModalObstacleComponent implements OnInit {
     ngOnInit(): void {
         // Achar nome da rua em que estamos, para realmente validar com o user e pegar as coordenadas dela.
     }
-    private lat: number;
-    private lng: number;
+    public lat: number;
+    public lng: number;
 
     constructor(
         public router: Router,
         public route: ActivatedRoute,
-        private obstacleService: ObstacleService
+        public obstacleService: ObstacleService
     ) {
         this.route.queryParams.subscribe(params => {
             this.lat = params['lat'];
