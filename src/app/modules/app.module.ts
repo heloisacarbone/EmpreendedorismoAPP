@@ -15,6 +15,7 @@ import { FavoritePlaces } from '../component/favorite-places/favorite-places.com
 import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component';
 import { MenuComponent } from '../component/menu/menu.component';
 import { DirectionsComponent } from '../component/directions/directions.component';
+import { OnibusComponent } from '../component/onibus/onibus.component'
 
 // Services
 import { ObstacleService } from '../services/obstacles/obstacle.service';
@@ -31,7 +32,8 @@ import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
     FavoritePlaces,
     MenuComponent,
     ModalObstacleComponent,
-    DirectionsComponent
+    DirectionsComponent,
+    OnibusComponent
   ],
   imports: [
     FormsModule,
