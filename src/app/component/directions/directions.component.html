@@ -3,11 +3,11 @@
   <form>
     <div class="form-group">
       <label for="usr">Origem:</label>
-      <input type="text" class="form-control"  id="origem" #origem>
+      <input type="text" autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" id="origem" #origem>
     </div>
     <div class="form-group">
       <label for="pwd">Destino:</label>
-      <input type="text" class="form-control" id="destino" #destino>
+      <input type="text" autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" id="destino" #destino>
     </div>
     <button type="button" (click)="calculateRoute(origem.value, destino.value)" class="btn btn-primary btn-block">Calcular rota!</button>
   </form>

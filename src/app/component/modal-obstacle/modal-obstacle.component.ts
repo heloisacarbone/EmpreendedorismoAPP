@@ -17,7 +17,7 @@ export class ModalObstacleComponent implements OnInit {
     }
     public lat: number;
     public lng: number;
-
+    public sucessInsert:boolean =false;
     constructor(
         public router: Router,
         public route: ActivatedRoute,
@@ -40,6 +40,7 @@ export class ModalObstacleComponent implements OnInit {
             .subscribe(
             obstacles => {
                 console.log("Add", obstacles);
+                this.sucessInsert = true;
             }
             );
       }
