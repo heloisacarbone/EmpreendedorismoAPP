@@ -42,7 +42,8 @@ import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
       useHash: true
     }),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAMLU3CZCl4fWZ2U3vRuXMvVRewzpC1LAA'
+      apiKey: 'AIzaSyAMLU3CZCl4fWZ2U3vRuXMvVRewzpC1LAA',
+      libraries: ["places"]
     })
   ],
   providers: [
