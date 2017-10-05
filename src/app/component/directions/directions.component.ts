@@ -25,10 +25,10 @@ export class DirectionsComponent implements OnInit {
     lng: number = -46.4995538;
     zoom = 16;
     constructor(
-        private router: Router,
-        private DirectionService: DirectionService,
-        private mapsAPILoader: MapsAPILoader,
-        private ngZone: NgZone
+        public router: Router,
+        public DirectionService: DirectionService,
+        public mapsAPILoader: MapsAPILoader,
+        public ngZone: NgZone
       ) {}
     ngOnInit(): void {
         this.setAutoCompleteFor(this.origemElement);
@@ -36,12 +36,12 @@ export class DirectionsComponent implements OnInit {
         this.setCurrentPosition();
     }
 
-    private calculateRoute(or, des){
+    public calculateRoute(or, des){
         console.log('calculate route! ',or,"-" ,des );
         this.DirectionService.test();
     }
 
-    private setAutoCompleteFor(searchElement: ElementRef){
+    public setAutoCompleteFor(searchElement: ElementRef){
         this.mapsAPILoader.load().then(
             () => {
                 let autocomplete = new google.maps.places.Autocomplete(searchElement.nativeElement);
@@ -59,7 +59,7 @@ export class DirectionsComponent implements OnInit {
         );
     }
 
-    private setCurrentPosition() {
+    public setCurrentPosition() {
         if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition((position) => {
                 this.lat = position.coords.latitude;

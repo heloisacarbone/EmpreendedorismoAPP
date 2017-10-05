@@ -8,17 +8,17 @@ import { Router } from '@angular/router';
 })
 
 export class MenuComponent {
-  constructor(private router: Router) {}
-  private goToMap() {
+  constructor(public router: Router) {}
+  public goToMap() {
     this.router.navigate(['mapa']);
   }
-  private goToFavorite() {
+  public goToFavorite() {
     this.router.navigate(['favoritos']);
   }
-  private goToDirections(){
+  public goToDirections(){
     this.router.navigate(['directions']);
   }
-  private goToBus() {
+  public goToBus() {
     this.router.navigate(['onibus']);
   }
 }
