@@ -5,6 +5,7 @@ import { FavoritePlaces } from '../component/favorite-places/favorite-places.com
 import { MenuComponent } from '../component/menu/menu.component';
 import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component';
 import { DirectionsComponent } from '../component/directions/directions.component';
+import { OnibusComponent } from '../component/onibus/onibus.component';
 
 
 // Define which component should be loaded based on the current URL
@@ -28,6 +29,10 @@ export const routes: Routes = [
     {
         path: '',
         component: MenuComponent
+    },
+    {
+        path:'onibus',
+        component: OnibusComponent
     }
 
 
