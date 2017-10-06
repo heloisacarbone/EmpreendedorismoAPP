@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
+    "start:dev": "ng serve",
     "build": "ng build",
     "heroku-postbuild": "ng build --aot -prod"
   },
@@ -47,6 +48,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "nodemon": "^1.11.0",
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2"

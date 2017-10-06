@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { FormsModule }   from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { CommonModule }   from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 
@@ -15,6 +15,7 @@ import { FavoritePlaces } from '../component/favorite-places/favorite-places.com
 import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component';
 import { MenuComponent } from '../component/menu/menu.component';
 import { DirectionsComponent } from '../component/directions/directions.component';
+import { DirectionsRouteComponent } from '../component/directions-route/directions-route.component';
 import { OnibusComponent } from '../component/onibus/onibus.component'
 
 // Services
@@ -33,10 +34,12 @@ import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
     MenuComponent,
     ModalObstacleComponent,
     DirectionsComponent,
+    DirectionsRouteComponent,
     OnibusComponent
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     HttpModule,
     CommonModule,
