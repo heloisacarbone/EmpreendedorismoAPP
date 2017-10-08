@@ -25,6 +25,9 @@ import { DirectionService } from '../services/directions/direction.service';
 // Factories
 import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
 
+//Helpers
+import { SetEndPointsHelper } from '../helpers/endpoints/set-end-points.helper';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +57,8 @@ import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
   providers: [
     ObstacleService,
     DirectionService,
-    ObstacleFactory
+    ObstacleFactory,
+    SetEndPointsHelper
   ],
   bootstrap: [
     AppComponent

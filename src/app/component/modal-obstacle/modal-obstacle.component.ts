@@ -32,8 +32,8 @@ export class ModalObstacleComponent implements OnInit {
     registerObstacle(form: NgForm) {
         let bodyReq = {
             type: form.value.obsradio,
-            latitude: String(this.lat),
-            longitude: String(this.lng)
+            lat: String(this.lat),
+            lng: String(this.lng)
         }
         console.log('body', bodyReq);
         this.obstacleService.add(bodyReq)
