@@ -7,8 +7,8 @@ export class ObstacleFactory{
         return o.map(obs => {
             return {
                 type: this.chooseType(obs.type),
-                lat: Number(obs.latitude),
-                lng: Number(obs.longitude)
+                lat: obs.lat,
+                lng: obs.lng
             }
         });
     } 
