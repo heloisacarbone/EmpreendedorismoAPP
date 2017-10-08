@@ -15,12 +15,12 @@ export class ObstacleService{
     ) {}
 
     add(o: any): Observable<any> {
-        return this.http.post(this.setEndPointsHelper.set('/obstacle/insert'), o)
+        return this.http.post(this.setEndPointsHelper.set('/Obstacle/insert'), o)
             .map(res => res.json())
             .catch(err => err);
     } 
     get(lat: string, lng: string, type?: string): Observable<any> {
-        return this.http.get(this.setEndPointsHelper.set('/obstacle/get?lat='+lat+"&lng="+lng))
+        return this.http.get(this.setEndPointsHelper.set('/Obstacle/get?lat='+lat+"&lng="+lng))
             .map(res => this.obstacleFactory.translateGet(res.json()))
             .catch(err => err);
     } 

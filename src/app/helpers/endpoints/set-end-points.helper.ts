@@ -4,8 +4,10 @@ import { Http } from '@angular/http';
 @Injectable()
 export class SetEndPointsHelper {
 
+    // local: http://localhost:7010
+    // heroku: https://veja-por-mim-api.herokuapp.com
     config = {
-        "APIEndpoint": "http://localhost:7010"
+        "APIEndpoint": "https://veja-por-mim-api.herokuapp.com"
     };
     constructor(private http: Http) {
         // this.http.get('src/app/config/settings.json')
