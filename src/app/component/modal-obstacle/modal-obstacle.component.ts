@@ -32,8 +32,8 @@ export class ModalObstacleComponent implements OnInit {
     registerObstacle(form: NgForm) {
         let bodyReq = {
             type: form.value.obsradio,
-            lat: String(this.lat),
-            lng: String(this.lng)
+            lat: this.lat,
+            lng: this.lng
         }
         console.log('body', bodyReq);
         this.obstacleService.add(bodyReq)
@@ -41,6 +41,7 @@ export class ModalObstacleComponent implements OnInit {
             obstacles => {
                 console.log("Add", obstacles);
                 this.sucessInsert = true;
+                this.router.navigate(['mapa']);
             }
             );
       }

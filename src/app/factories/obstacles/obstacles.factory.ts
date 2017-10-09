@@ -6,9 +6,9 @@ export class ObstacleFactory{
     translateGet(o: any): any {
         return o.map(obs => {
             return {
-                type: this.chooseType(obs.type),
-                lat: Number(obs.latitude),
-                lng: Number(obs.longitude)
+                type: this.chooseType(obs.Type),
+                lat: obs.Latitude,
+                lng: obs.Longitude
             }
         });
     } 
