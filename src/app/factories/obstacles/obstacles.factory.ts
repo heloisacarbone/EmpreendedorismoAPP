@@ -18,9 +18,10 @@ export class ObstacleFactory{
             return 'Poste';
         } else if (t === 'hole') {
             return 'Buraco';
-        } else {
+        } else if (t === 'other') {
             return 'Obstáculo';
-        }
+        } else {
+          return t;
     }
     
 }
