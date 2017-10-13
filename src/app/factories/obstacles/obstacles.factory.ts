@@ -22,6 +22,7 @@ export class ObstacleFactory{
             return 'Obstáculo';
         } else {
           return t;
+        }
     }
     
 }
