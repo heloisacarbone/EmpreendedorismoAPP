@@ -2,3 +2,9 @@
     margin-top: 20px;
 
 }
+
+.btn-block {
+    font-size: 20px;
+    display: block;
+    width: 100%;
+}

@@ -12,3 +12,9 @@ modal {
 agm-marker {
     height: 200px;
 }
+
+.btn-block {
+    font-size: 20px;
+    display: block;
+    width: 100%;
+}
