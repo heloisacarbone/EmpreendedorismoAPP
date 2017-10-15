@@ -15,9 +15,11 @@
     padding-top: 0.5em;
 }
 
-.btn-nav {
+.btn-nav[_ngcontent-c0] {
     position: absolute;
     right: 2em;
     top: 0.4em;
     font-size: 20px;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
 }
