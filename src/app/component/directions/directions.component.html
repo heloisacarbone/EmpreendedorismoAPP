@@ -11,7 +11,7 @@
     </div>
     <button type="button" (click)="calculateRoute(origem.value, destino.value)" class="btn btn-primary btn-block">Calcular rota!</button>
   </form>
-  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [streetViewControl]=false>
     <agm-marker [latitude]="lat" [longitude]="lng">
         <agm-info-window>
             <strong>Minha Localização</strong>
