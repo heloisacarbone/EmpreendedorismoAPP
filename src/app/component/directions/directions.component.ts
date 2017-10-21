@@ -26,8 +26,8 @@ export class DirectionsComponent implements OnInit {
     @ViewChild('destino') public destinoElement: ElementRef;
     @ViewChild(DirectionsRouteComponent) vc: DirectionsRouteComponent;
 
-    lat: number = -23.4821149;
-    lng: number = -46.4995538;
+    lat: number;
+    lng: number;
     destinationInput: FormControl;
     destinationOutput: FormControl;
     origin: number;
@@ -41,7 +41,6 @@ export class DirectionsComponent implements OnInit {
         public ngZone: NgZone
     ) { }
     ngOnInit(): void {
-        console.log("AQUII");
         this.destinationInput = new FormControl();
         this.destinationOutput = new FormControl();
         this.setCurrentPosition();
@@ -72,7 +71,7 @@ export class DirectionsComponent implements OnInit {
                             this.vc.origin = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() };
                             this.vc.originPlaceId = place.place_id;
                         } else {
-                            this.vc.destination = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() }; // its a example aleatory position
+                            this.vc.destination = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() }; 
                             this.vc.destinationPlaceId = place.place_id;
                         }
 
@@ -88,11 +87,38 @@ export class DirectionsComponent implements OnInit {
         );
     }
 
+    public getGeocoderAddress(lat: number, lng: number): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.mapsAPILoader.load().then(
+                () => {
+                    let geocoder = new google.maps.Geocoder;
+                    let latlng = {lat: lat, lng: lng};
+                    geocoder.geocode({'location': latlng}, function(results, status) {
+                        if (results !== null && results !== undefined && results.length > 0) {
+                            resolve(results[0].formatted_address);
+                        } else {
+                            reject('Couldn\'t find address. ');
+                        }
+                        
+                    });
+                }
+            );
+        });
+
+    }
+
     public setCurrentPosition() {
         if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition((position) => {
                 this.lat = position.coords.latitude;
                 this.lng = position.coords.longitude;
+                this.getGeocoderAddress(this.lat, this.lng)
+                    .then((address) => {
+                        this.destinationInput.setValue(address);
+                    })
+                    .catch((err) => {
+                        console.log('Error setCurrentPosition: ', err);
+                    }); 
             });
         }
     }
