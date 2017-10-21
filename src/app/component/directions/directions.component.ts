@@ -123,4 +123,14 @@ export class DirectionsComponent implements OnInit {
         }
     }
 
+
+    public addFavorite(origem, destino) {
+        this.router.navigate(['addfavoritos'], {
+            queryParams: {
+                'origem': origem,
+                'destino': destino
+            }
+        });
+    }
+
 }

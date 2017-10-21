@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Adicionar favoritos</h2>
+    
+    <form #obstaclesForm="ngForm" (ngSubmit)="registerObstacle(obstaclesForm)">
+    <div class="form-group">
+        <label for="email">Qual endereço você deseja adicionar? </label>
+        
+        <div *ngFor="let a of address" class="radio">
+          <label><input type="radio" name="aradio" [value]="a" ngModel>{{a}}</label>
+        </div>
+        
+        <div class="radio">
+          <label><input type="radio" name="obsradio" value="others" ngModel>Outro</label>
+          <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #origem [formControl]="otherInput">
+        </div>
+    </div>
+    
+    
+    <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal">Adicionar</button>
+    </form>
+    
+    <h4 style="margin-top:30px" *ngIf="sucessInsert">
+    Obstáculo inserido com sucesso!
+    </h4>
+</div>

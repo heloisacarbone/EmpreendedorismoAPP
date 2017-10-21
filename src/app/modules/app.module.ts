@@ -13,6 +13,7 @@ import { AppComponent } from '../component/app/app.component';
 import { MapsComponent } from '../component/maps/maps.component';
 import { FavoritePlaces } from '../component/favorite-places/favorite-places.component';
 import { ModalObstacleComponent } from '../component/modal-obstacle/modal-obstacle.component';
+import { ModalAddFavoriteComponent } from '../component/modal-add-favorite/modal-add-favorite.component';
 import { MenuComponent } from '../component/menu/menu.component';
 import { DirectionsComponent } from '../component/directions/directions.component';
 import { DirectionsRouteComponent } from '../component/directions-route/directions-route.component';
@@ -35,6 +36,7 @@ import { SetEndPointsHelper } from '../helpers/endpoints/set-end-points.helper';
     MapsComponent,
     FavoritePlaces,
     MenuComponent,
+    ModalAddFavoriteComponent,
     ModalObstacleComponent,
     DirectionsComponent,
     DirectionsRouteComponent,

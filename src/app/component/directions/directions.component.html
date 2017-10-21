@@ -10,6 +10,7 @@
       <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #destino [formControl]="destinationOutput" >
     </div>
     <button type="button" (click)="calculateRoute(origem.value, destino.value)" class="btn btn-primary btn-block">Calcular rota!</button>
+    <button type="button" (click)="addFavorite(origem.value, destino.value)" class="btn btn-yellow btn-block">Adicionar Favorito</button>
   </form>
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [streetViewControl]=false>
     <agm-marker [latitude]="lat" [longitude]="lng">

@@ -8,3 +8,7 @@
     display: block;
     width: 100%;
 }
+
+.btn-yellow {
+    background: rgb(252, 255, 179);
+  }
