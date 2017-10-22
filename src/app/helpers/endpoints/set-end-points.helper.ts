@@ -7,7 +7,7 @@ export class SetEndPointsHelper {
     // local: http://localhost:7010
     // heroku: https://veja-por-mim-api.herokuapp.com
     config = {
-        "APIEndpoint": "https://veja-por-mim-api.herokuapp.com"
+        "APIEndpoint": "http://localhost:7010"
     };
     constructor(private http: Http) {
         // this.http.get('src/app/config/settings.json')

@@ -1,25 +1,26 @@
 <div class="container">
-    <h2>Adicionar favoritos</h2>
-    
-    <form #obstaclesForm="ngForm" (ngSubmit)="registerObstacle(obstaclesForm)">
-    <div class="form-group">
-        <label for="email">Qual endereço você deseja adicionar? </label>
-        
-        <div *ngFor="let a of address" class="radio">
-          <label><input type="radio" name="aradio" [value]="a" ngModel>{{a}}</label>
+    <h1>Adicionar favoritos</h1>
+    <form #f="ngForm">
+      <div class="form-group">
+        <label class="pergunta">O que é esse endereço para você?</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="favorite.name">
+      </div>
+      <div class="form-group">
+        <label class="pergunta">Qual endereço você deseja adicionar?</label>
+        <div class="radio" *ngFor="let a of address">
+          <label>
+            <input type="radio" name="addr" [(ngModel)]="favorite.address" [value]="a">
+            {{a}}
+          </label>
         </div>
-        
         <div class="radio">
-          <label><input type="radio" name="obsradio" value="others" ngModel>Outro</label>
-          <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #origem [formControl]="otherInput">
-        </div>
-    </div>
-    
-    
-    <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal">Adicionar</button>
+            <label>
+              <input type="radio" name="addr" value="others" [(ngModel)]="favorite.address">
+              Outro
+            </label>
+            <input placeholder="Digite o endereco desejado" type="text" class="form-control" name="other" [(ngModel)]="favorite.other">
+          </div>
+      </div>
+     
+      <button type="submit" (click)="registerFavorite(f)" class="btn btn-yellow btn-default">Adicionar</button>
     </form>
-    
-    <h4 style="margin-top:30px" *ngIf="sucessInsert">
-    Obstáculo inserido com sucesso!
-    </h4>
-</div>

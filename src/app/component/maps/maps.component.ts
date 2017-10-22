@@ -12,8 +12,8 @@ import { NgForOf } from '@angular/common';
 })
 
 export class MapsComponent {
-  lat: number = -23.4821149;
-  lng: number = -46.4995538;
+  lat: number;
+  lng: number;
   zoom: number = 16;
   obstacles: any = [];
   showDialog = false;

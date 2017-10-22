@@ -12,3 +12,8 @@
 .container{
     margin: auto;
 }
+
+.btn {
+    background-color: #508eba;
+    color: white; 
+}

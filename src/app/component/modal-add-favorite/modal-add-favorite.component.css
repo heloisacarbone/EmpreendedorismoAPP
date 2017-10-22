@@ -1,0 +1,13 @@
+.pergunta {
+    font-size: 1.8em;
+}
+
+button,
+label,
+input {
+    font-size: 1.5em;
+}
+
+.btn-yellow {
+    background: #AA9939;
+}

@@ -112,13 +112,14 @@ export class DirectionsComponent implements OnInit {
             navigator.geolocation.getCurrentPosition((position) => {
                 this.lat = position.coords.latitude;
                 this.lng = position.coords.longitude;
-                this.getGeocoderAddress(this.lat, this.lng)
+                /*this.getGeocoderAddress(this.lat, this.lng)
                     .then((address) => {
                         this.destinationInput.setValue(address);
+                        
                     })
                     .catch((err) => {
                         console.log('Error setCurrentPosition: ', err);
-                    }); 
+                    });*/ 
             });
         }
     }
