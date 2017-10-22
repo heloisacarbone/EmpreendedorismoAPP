@@ -2,13 +2,23 @@
     
     height: 50vh;
 }
-
-.btn {
-    font-size: 18px;
-    display: block;
-    width: 100%;
+label {
+    font-size: 1.3em;   
+    position: relative;
+    float:left;
 }
 
-.btn-yellow {
-    background: #AA9939;
+input {
+    font-size: 1.3em;   
+}
+
+
+
+.btn {
+    font-size: 1.5em;
+}
+
+.btn-favorite {
+    background: #051838;
+    color: white;
 }

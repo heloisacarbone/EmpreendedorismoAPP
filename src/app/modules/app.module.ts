@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { FormControl, FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { CommonModule }   from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 import { routes } from './app.routes';
 
@@ -60,7 +61,8 @@ import { SetEndPointsHelper } from '../helpers/endpoints/set-end-points.helper';
     ObstacleService,
     DirectionService,
     ObstacleFactory,
-    SetEndPointsHelper
+    SetEndPointsHelper,
+    CookieService
   ],
   bootstrap: [
     AppComponent

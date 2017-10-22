@@ -8,6 +8,7 @@ import { NgForm, FormControl, FormsModule, ReactiveFormsModule } from "@angular/
 import * as Maps from 'google-maps';
 import { MapsAPILoader } from '@agm/core';
 import { } from '@types/googlemaps';
+import { CookieService } from 'angular2-cookie/core';
 
 // import { ObstacleService } from '../../services/obstacles/obstacle.service';
 
@@ -17,21 +18,21 @@ import { } from '@types/googlemaps';
   styleUrls: ['modal-add-favorite.component.css']
 })
 
-export class ModalAddFavoriteComponent implements OnInit {
-    ngOnInit(): void {
-        // Achar nome da rua em que estamos, para realmente validar com o user e pegar as coordenadas dela.
-    }
+export class ModalAddFavoriteComponent {
+    
     public address: any = [];
     public favorite: any = {
         name: ""
     };
     public otherInput: FormControl;
     @ViewChild('otherInput') public outroElement: ElementRef;
+
     constructor(
         public router: Router,
         public route: ActivatedRoute,
         public mapsAPILoader: MapsAPILoader,
-        public ngZone: NgZone
+        public ngZone: NgZone,
+        private cookieService:CookieService
     ) {
         this.route.queryParams.subscribe(params => {
             if (params['destino'] !== null && params['destino'] !== undefined && params['destino'] !== '') { 
@@ -66,9 +67,19 @@ export class ModalAddFavoriteComponent implements OnInit {
         );
     }
     public registerFavorite(favoriteForm: NgForm) {
+        let cookie = this.cookieService.get('favoritePlaces');
+         
         let favorite = favoriteForm.value;
-        if (favorite.addr = 'other') {
 
+        let newFavorite = favorite.name + ':' + (favorite.addr === 'others' ? favorite.other : favorite.addr);
+        
+        if (cookie !== null && cookie !== undefined) {
+            cookie += ';' + newFavorite;      
+        } else {
+            cookie = newFavorite;
         }
+        
+
+        this.cookieService.put('favoritePlaces', cookie);
     }
 }

@@ -9,5 +9,11 @@ input {
 }
 
 .btn-yellow {
-    background: #AA9939;
+    background: #051838;
+    color: white;
+}
+
+.redio-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 2em;
 }
