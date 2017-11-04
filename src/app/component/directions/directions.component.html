@@ -3,11 +3,14 @@
     <div class="form-group">
       <label for="usr">Origem</label>
       <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #origem [formControl]="destinationInput">
+      <button type="button" class="btn btn-primary btn-block" (click)="tryToRecord()">
+          <img src="../../assets/images/white-microphone.png" width="12" height="20"/>
+      </button>
     </div>
     <div class="form-group">
       <label for="pwd">Destino</label>
       <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #destino [formControl]="destinationOutput" >
-    </div>
+    </div>  
     <button type="button" (click)="calculateRoute(origem.value, destino.value)" class="btn btn-primary btn-block">Calcular rota!</button>
     <button type="button" (click)="addFavorite(origem.value, destino.value)" class="btn btn-favorite btn-block">Adicionar Favorito</button>
   </form>

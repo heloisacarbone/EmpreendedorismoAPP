@@ -13,11 +13,14 @@ import { DirectionsRouteComponent } from '../directions-route/directions-route.c
 import { DirectionService } from '../../services/directions/direction.service';
 
 
+import { SpeechRecognitionService } from '../speech/speech.component';
+
+
 @Component({
     selector: 'Directions',
     templateUrl: './directions.component.html',
     styleUrls: ['./directions.component.css'],
-    providers: [GoogleMapsAPIWrapper]
+    providers: [GoogleMapsAPIWrapper, SpeechRecognitionService]
 })
 
 export class DirectionsComponent implements OnInit {
@@ -38,7 +41,8 @@ export class DirectionsComponent implements OnInit {
         public DirectionService: DirectionService,
         public mapsAPILoader: MapsAPILoader,
         public gmapsApi: GoogleMapsAPIWrapper,
-        public ngZone: NgZone
+        public ngZone: NgZone,
+        private speech: SpeechRecognitionService
     ) { }
     ngOnInit(): void {
         this.destinationInput = new FormControl();
@@ -122,6 +126,11 @@ export class DirectionsComponent implements OnInit {
                     });*/ 
             });
         }
+    }
+
+    public tryToRecord(){
+        this.speech.record('pt_BR')
+        .subscribe(e => console.log(e));
     }
 
 
