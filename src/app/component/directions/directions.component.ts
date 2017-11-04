@@ -128,9 +128,14 @@ export class DirectionsComponent implements OnInit {
         }
     }
 
-    public tryToRecord(){
+    public tryToRecord(controlOutput: FormControl){
         this.speech.record('pt_BR')
-        .subscribe(e => console.log(e));
+        .subscribe(e => {
+            console.log(e);
+
+            controlOutput.setValue(e);
+        });
+
     }
 
 

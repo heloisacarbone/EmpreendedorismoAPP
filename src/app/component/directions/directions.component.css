@@ -12,7 +12,11 @@ input {
     font-size: 1.3em;   
 }
 
-
+.btn-default {
+    color: #fff;
+    background-color: rgb(188, 15, 15);
+    border-color: #A42E2E;
+}
 
 .btn {
     font-size: 1.5em;
