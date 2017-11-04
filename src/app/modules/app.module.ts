@@ -23,11 +23,12 @@ import { OnibusComponent } from '../component/onibus/onibus.component'
 // Services
 import { ObstacleService } from '../services/obstacles/obstacle.service';
 import { DirectionService } from '../services/directions/direction.service';
+import { OnibusService } from '../services/onibus/onibus.service';
 
 // Factories
 import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
 
-//Helpers
+// Helpers
 import { SetEndPointsHelper } from '../helpers/endpoints/set-end-points.helper';
 
 
@@ -54,7 +55,7 @@ import { SetEndPointsHelper } from '../helpers/endpoints/set-end-points.helper';
     }),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAMLU3CZCl4fWZ2U3vRuXMvVRewzpC1LAA',
-      libraries: ["places"]
+      libraries: ['places']
     })
   ],
   providers: [
@@ -62,7 +63,8 @@ import { SetEndPointsHelper } from '../helpers/endpoints/set-end-points.helper';
     DirectionService,
     ObstacleFactory,
     SetEndPointsHelper,
-    CookieService
+    CookieService,
+    OnibusService
   ],
   bootstrap: [
     AppComponent
