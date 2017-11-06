@@ -13,14 +13,14 @@ import { DirectionsRouteComponent } from '../directions-route/directions-route.c
 import { DirectionService } from '../../services/directions/direction.service';
 
 
-import { SpeechRecognitionService } from '../speech/speech.component';
+import { SpeechRecognitionService, SpeechSynthesisService } from '../speech/speech.component';
 
 
 @Component({
     selector: 'Directions',
     templateUrl: './directions.component.html',
     styleUrls: ['./directions.component.css'],
-    providers: [GoogleMapsAPIWrapper, SpeechRecognitionService]
+    providers: [GoogleMapsAPIWrapper, SpeechRecognitionService, SpeechSynthesisService]
 })
 
 export class DirectionsComponent implements OnInit {
@@ -42,7 +42,8 @@ export class DirectionsComponent implements OnInit {
         public mapsAPILoader: MapsAPILoader,
         public gmapsApi: GoogleMapsAPIWrapper,
         public ngZone: NgZone,
-        private speech: SpeechRecognitionService
+        private speech: SpeechRecognitionService,
+        private speaker: SpeechSynthesisService
     ) { }
     ngOnInit(): void {
         this.destinationInput = new FormControl();
@@ -132,10 +133,34 @@ export class DirectionsComponent implements OnInit {
         this.speech.record('pt_BR')
         .subscribe(e => {
             console.log(e);
-
+            
             controlOutput.setValue(e);
-        });
+        });        
+    }
 
+    public tryToSpeak(language: string, input: string){
+        var voices = [];
+        voices = speechSynthesis.getVoices();
+        
+        for(let i = 0; i < voices.length ; i++) {
+            // var option = document.createElement('option');
+            // option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+            
+            console.log(voices[i].name + ' - ' + voices[i].lang);
+
+            // if(voices[i].default) {
+            //   option.textContent += ' -- DEFAULT';
+            // }
+        
+            // option.setAttribute('data-lang', voices[i].lang);
+            // option.setAttribute('data-name', voices[i].name);
+            // document.getElementById("voiceSelect").appendChild(option);
+        }
+
+
+        console.log("AQUI");
+        console.log(this.speaker.checkVoices());
+        this.speaker.speak(language, input);
     }
 
 
