@@ -17,15 +17,17 @@ export class OnibusComponent{
   showResults: boolean;
   showResult = false;
   constructor(
-      public OnibusService: OnibusService
-  ) {}
+      public onibusService: OnibusService
+  ) {
+    onibusService.authenticate().map(res => {if(res == "true") {console.log("OLOKO")}});
+  }
 
 
 
 
 
   buscarLinha = (nomeOnibus) => {
-    this.OnibusService.getBusByName('nomeOnibus');
+    this.onibusService.getBusByName('nomeOnibus');
     this.showResults = true;
 
   }
