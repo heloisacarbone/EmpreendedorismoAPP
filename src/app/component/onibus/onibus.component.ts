@@ -18,16 +18,25 @@ export class OnibusComponent{
   showResult = false;
   constructor(
       public onibusService: OnibusService
-  ) {
-    onibusService.authenticate().map(res => {if(res == "true") {console.log("OLOKO")}});
-  }
+  ) {}
 
 
 
 
 
-  buscarLinha = (nomeOnibus) => {
-    this.onibusService.getBusByName('nomeOnibus');
+  buscarLinha(nomeOnibus) {
+    console.log(nomeOnibus);
+    this.onibusService.authenticate().subscribe(
+      data => {
+        console.log("aut", data);
+      }
+    );
+    this.onibusService.getBusLine(nomeOnibus).subscribe(
+      data => {
+        console.log("res", data);
+      }
+    );
+    
     this.showResults = true;
 
   }

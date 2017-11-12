@@ -13,7 +13,7 @@ export class OnibusService {
     private token:string = "eed2f0a08d1982d4facdad7ec54cd0d46ad0e00664e9b9fd72b74a9187d255c0";
 
     //GET
-    private buscaLinhaUrl: string = "";   // /Linha/Buscar?termosBusca={termosBusca}  [string]
+    private buscaLinhaUrl: string = "/Linha/Buscar?termosBusca=";   // /Linha/Buscar?termosBusca={termosBusca}  [string]
     private buscaLinhaSentidoUrl: string = ""; // /Linha/BuscarLinhaSentido?termosBusca={codigoLinha}&sentido={sentido} [string] [byte]
     private buscaParadaUrl: string = ""; //  /Parada/Buscar?termosBusca={termosBusca}   [string]
     private buscaParadasPorLinhaUrl:string = ""; // /Parada/BuscarParadasPorLinha?codigoLinha={codigoLinha} [int]
@@ -37,20 +37,20 @@ export class OnibusService {
     ) {}
 
     authenticate(): Observable<any> {
-        let response = this.http
-            .post(`${this.baseUrl}${this.authenticateUrl}?token=${this.token}`, {headers: this.getHeaders()})
-            .map(data => {
-                // response.json;
-                // response = data.results;
-            })
+        
+        return this.http
+        
+            //.post(`${this.baseUrl}${this.authenticateUrl}?token=${this.token}`, {headers: this.getHeaders()})
+            .post('http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=eed2f0a08d1982d4facdad7ec54cd0d46ad0e00664e9b9fd72b74a9187d255c0', {headers: this.getHeaders()})
+            .map(data => data.json())
+            .catch(err => err);
+    }
 
-        console.log("OnibusService: Authentificated");
-        return response;
-
-        // http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=eed2f0a08d1982d4facdad7ec54cd0d46ad0e00664e9b9fd72b74a9187d255c0
-        // console.log('authenticated');
-        // this.http.post('http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=eed2f0a08d1982d4facdad7ec54cd0d46ad0e00664e9b9fd72b74a9187d255c0', {})
-        // .subscribe(res => console.log('hm'));
+    getBusLine(line: string) {
+        console.log('Aqui');
+        return this.http.get('http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=' + line)
+            .map(res => res.json())
+            .catch(err => err);
     }
 
     getBusByName (name: string) {
