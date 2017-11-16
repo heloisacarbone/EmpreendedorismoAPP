@@ -29,13 +29,17 @@ export class OnibusComponent{
     this.onibusService.authenticate().subscribe(
       data => {
         console.log("aut", data);
+        this.onibusService.getBusLine(nomeOnibus).subscribe(
+            data => {
+                console.log("res", data);
+            },
+            err => {
+                console.log("err", err);
+            }
+    );
       }
     );
-    this.onibusService.getBusLine(nomeOnibus).subscribe(
-      data => {
-        console.log("res", data);
-      }
-    );
+    
     
     this.showResults = true;
 
