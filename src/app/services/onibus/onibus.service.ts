@@ -6,10 +6,10 @@ import { ObstacleFactory } from '../../factories/obstacles/obstacles.factory';
 @Injectable()
 export class OnibusService {
 
-    private baseUrl: string = 'http://api.olhovivo.sptrans.com.br/v2.1.';
+    private baseUrl: string = 'http://api.olhovivo.sptrans.com.br/v2.1';
 
     //POST
-    private authenticateUrl: string = "/Login/Autenticar"; ///Login/Autenticar?token={token}   [string]
+    private authenticateUrl: string = "/Login/Autenticar?token="; ///Login/Autenticar?token={token}   [string]
     private token:string = "eed2f0a08d1982d4facdad7ec54cd0d46ad0e00664e9b9fd72b74a9187d255c0";
 
     //GET
@@ -40,7 +40,7 @@ export class OnibusService {
         
         return this.http
         
-            //.post(`${this.baseUrl}${this.authenticateUrl}?token=${this.token}`, {headers: this.getHeaders()})
+            //.post(`${this.baseUrl}${this.authenticateUrl}${this.token}`, {headers: this.getHeaders()})
             .post('http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=eed2f0a08d1982d4facdad7ec54cd0d46ad0e00664e9b9fd72b74a9187d255c0', {headers: this.getHeaders()})
             .map(data => data.json())
             .catch(err => err);
