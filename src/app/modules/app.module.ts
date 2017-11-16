@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { FormControl, FormsModule, ReactiveFormsModule }   from '@angular/forms';
-import { CommonModule }   from '@angular/common';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 
@@ -27,7 +27,7 @@ import { OnibusService } from '../services/onibus/onibus.service';
 
 // Factories
 import { ObstacleFactory } from '../factories/obstacles/obstacles.factory';
-
+import { OnibusFactory } from '../factories/onibus/onibus.factory';
 // Helpers
 import { SetEndPointsHelper } from '../helpers/endpoints/set-end-points.helper';
 
@@ -62,6 +62,7 @@ import { SetEndPointsHelper } from '../helpers/endpoints/set-end-points.helper';
     ObstacleService,
     DirectionService,
     ObstacleFactory,
+    OnibusFactory,
     SetEndPointsHelper,
     CookieService,
     OnibusService

@@ -16,7 +16,7 @@ export class OnibusService {
     private buscaLinhaUrl: string = "/Linha/Buscar?termosBusca=";   // /Linha/Buscar?termosBusca={termosBusca}  [string]
     private buscaLinhaSentidoUrl: string = ""; // /Linha/BuscarLinhaSentido?termosBusca={codigoLinha}&sentido={sentido} [string] [byte]
     private buscaParadaUrl: string = ""; //  /Parada/Buscar?termosBusca={termosBusca}   [string]
-    private buscaParadasPorLinhaUrl:string = ""; // /Parada/BuscarParadasPorLinha?codigoLinha={codigoLinha} [int]
+    private buscaParadasPorLinhaUrl:string = '/Parada/BuscarParadasPorLinha?codigoLinha=';
     private buscaParadasPorCorredorUrl: string = ""; // /Parada/BuscarParadasPorCorredor?codigoCorredor={codigoCorredor} [int]
 
     private previsaoChegadaDaLinhaNoPontoUrl: string = ""; // /Previsao?codigoParada={codigoParada}&codigoLinha={codigoLinha} [int] [int]
@@ -49,6 +49,12 @@ export class OnibusService {
     getBusLine(line: string) {
         console.log('Aqui');
         return this.http.get('http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=' + line)
+            .map(res => res.json())
+            .catch(err => err);
+    }
+
+    getStopByLine(code: any) {
+        return this.http.get('http://api.olhovivo.sptrans.com.br/v2.1/Posicao/Linha?codigoLinha=' + code)
             .map(res => res.json())
             .catch(err => err);
     }
