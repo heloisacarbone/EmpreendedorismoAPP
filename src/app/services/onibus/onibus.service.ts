@@ -41,20 +41,20 @@ export class OnibusService {
         return this.http
         
             //.post(`${this.baseUrl}${this.authenticateUrl}${this.token}`, {headers: this.getHeaders()})
-            .post('http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=eed2f0a08d1982d4facdad7ec54cd0d46ad0e00664e9b9fd72b74a9187d255c0', {headers: this.getHeaders()})
+            .post('//api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=eed2f0a08d1982d4facdad7ec54cd0d46ad0e00664e9b9fd72b74a9187d255c0', {headers: this.getHeaders()})
             .map(data => data.json())
             .catch(err => err);
     }
 
     getBusLine(line: string) {
         console.log('Aqui');
-        return this.http.get('http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=' + line)
+        return this.http.get('//api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=' + line)
             .map(res => res.json())
             .catch(err => err);
     }
 
     getStopByLine(code: any) {
-        return this.http.get('http://api.olhovivo.sptrans.com.br/v2.1/Posicao/Linha?codigoLinha=' + code)
+        return this.http.get('//api.olhovivo.sptrans.com.br/v2.1/Posicao/Linha?codigoLinha=' + code)
             .map(res => res.json())
             .catch(err => err);
     }
