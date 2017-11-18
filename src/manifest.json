@@ -8,8 +8,8 @@
             "type": "image/png"
         }
   ],
-  "theme_color": "#162955",
-  "background_color": "#162955",
+  "theme_color": "#0c64a3",
+  "background_color": "#0c64a3",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"
