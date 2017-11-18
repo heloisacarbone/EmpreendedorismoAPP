@@ -1,8 +1,11 @@
 .nav-btn {
     border: none;
+
 }
 
-
+.btn-nav {
+    background-color: #C1C7C9;
+}
 .nav-container{
     background-color: #0c64a3;
     width: 105%;
