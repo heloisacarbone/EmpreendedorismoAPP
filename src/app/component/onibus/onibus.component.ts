@@ -30,46 +30,36 @@ export class OnibusComponent {
 
   buscarLinha(nomeOnibus) {
     this.mapVisible = false;
-    this.onibusService.authenticate().subscribe(
+    this.onibusService.getBusLine(nomeOnibus).subscribe(
       data => {
-        this.onibusService.getBusLine(nomeOnibus).subscribe(
-            data => {
-              console.log(data);
-                this.lines = this.onibusFactory.formatBusLine(data);
-            },
-            err => {
-                console.log('err', err);
-            }
-    );
+        console.log(data);
+          this.lines = this.onibusFactory.formatBusLine(data);
+      },
+      err => {
+          console.log('err', err);
       }
-    );
+    );      
   }
 
   acharPosicoesBus(cl, name) {
-    console.log(cl);
-    this.onibusService.authenticate().subscribe(
+    this.onibusService.getStopByLine(cl).subscribe(
       data => {
-        this.onibusService.getStopByLine(cl).subscribe(
-            data => {
-              console.log('paradas', data);
-              if (data.vs.length > 0) {
-                this.setCurrentPosition();
-                this.mapVisible = true;
-                this.busPosition = data.vs.map(p => {
-                  return {
-                    lat: p.py,
-                    lng: p.px,
-                    bus: name
-                  };
-                });
-              }
-            },
-            err => {
-                console.log('err', err);
-            }
-          );
+        if (data.vs.length > 0) {
+          this.setCurrentPosition();
+          this.mapVisible = true;
+          this.busPosition = data.vs.map(p => {
+            return {
+              lat: p.py,
+              lng: p.px,
+              bus: name
+            };
+          });
+        }
+      },
+      err => {
+          console.log('err', err);
       }
-    );
+    ); 
   }
 
   setCurrentPosition() {
