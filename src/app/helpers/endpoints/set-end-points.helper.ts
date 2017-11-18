@@ -5,9 +5,9 @@ import { Http } from '@angular/http';
 export class SetEndPointsHelper {
 
     // local: http://localhost:7010
-    // heroku: https://veja-por-mim-api-mongo.herokuapp.com
+    // heroku: https://veja-por-mim-api-mongo.herokuapp.com:443
     config = {
-        "APIEndpoint": "https://veja-por-mim-api-mongo.herokuapp.com"
+        "APIEndpoint": "https://veja-por-mim-api-mongo.herokuapp.com:443"
     };
     constructor(private http: Http) {
         // this.http.get('src/app/config/settings.json')
