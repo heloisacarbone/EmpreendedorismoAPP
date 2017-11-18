@@ -3,7 +3,7 @@
   "short_name": "VejaPorMim",
   "icons": [
         {
-            "src": "/assets/images/logoVejaPorMim.png",
+            "src": "/assets/images/logoMini.png",
             "sizes": "192x192",
             "type": "image/png"
         }
