@@ -31,6 +31,11 @@ app.get('/*', function(req, res) {
 });
 */
  
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // Run the app by serving the static files
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
