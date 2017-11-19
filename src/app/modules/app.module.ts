@@ -5,7 +5,8 @@ import { HttpModule } from '@angular/http';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { CookieService } from 'ngx-cookie-service';
+//import { CookieService, CookieOptionsArgs } from 'angular2-cookie/core';
 
 import { routes } from './app.routes';
 

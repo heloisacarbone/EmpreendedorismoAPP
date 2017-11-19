@@ -8,7 +8,8 @@ import { NgForm, FormControl, FormsModule, ReactiveFormsModule } from "@angular/
 import * as Maps from 'google-maps';
 import { MapsAPILoader } from '@agm/core';
 import { } from '@types/googlemaps';
-import { CookieService } from 'angular2-cookie/core';
+import { CookieService } from 'ngx-cookie-service';
+//import { CookieService, CookieOptionsArgs } from 'angular2-cookie/core';
 
 // import { ObstacleService } from '../../services/obstacles/obstacle.service';
 
@@ -67,19 +68,22 @@ export class ModalAddFavoriteComponent {
         );
     }
     public registerFavorite(favoriteForm: NgForm) {
+        let cookieexist = this.cookieService.check('favoritePlaces');
         let cookie = this.cookieService.get('favoritePlaces');
          
         let favorite = favoriteForm.value;
 
         let newFavorite = favorite.name + ':' + (favorite.addr === 'others' ? favorite.other : favorite.addr);
         
-        if (cookie !== null && cookie !== undefined) {
+        if (cookieexist) {
             cookie += ';' + newFavorite;      
         } else {
             cookie = newFavorite;
         }
         
 
-        this.cookieService.put('favoritePlaces', cookie);
+        this.cookieService.set('favoritePlaces', cookie);
+
+        this.router.navigate(['favoritos']);
     }
 }
